@@ -12,7 +12,7 @@ qmplot(LON_WWTP, LAT_WWTP,
 #        size = I(1)) # size = size of dot
 
 test <- subset(waste, LON_WWTP > -80 & LON_WWTP < -75 & LAT_WWTP > 47 & LAT_WWTP < 49)
-test
+
 # location in row 36540 is in Canada: changing country/country_iso in main dataset
 waste[36540,]
 
@@ -65,7 +65,6 @@ ggmap(me, size = c(600,900)) +
   #  geom_polygon(data = outer_area, aes(x = long, y = lat), fill = 'white')
   geom_point(data = MEwaste, aes(x = LON_WWTP, y = LAT_WWTP, color = "Treatment Plant Location", size = WASTE_DIS)) +
   geom_point(data = MEwaste, aes(x = LON_OUT, y = LAT_OUT, color = "Treatment Plant Outflow Location")) +
-  theme(legend.title = 
   scale_color_manual(name = "Site",
                      breaks = c('Treatment Plant Location', 'Treatment Plant Outflow Location'),
                      values = c('Treatment Plant Location' = 'black',

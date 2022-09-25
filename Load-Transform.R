@@ -2,7 +2,9 @@ library(ggmap)
 library(sf)
 library(spData)
 
-register_google(key="xxx") # insert api key here
+google.api.key <- read.table("~/R/google.api.key.txt")[1,1]
+
+register_google(key="google.api.key")
 
 ## pointsDF: A data.frame whose first column contains longitudes and
 ##           whose second column contains latitudes.
